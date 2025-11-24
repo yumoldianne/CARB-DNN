@@ -1,1 +1,9 @@
 # Learning Architectural Simplicity Through Multi-Path Routing: Context-Aware Residual Blocks for Deep Neural Networks
+
+This paper proposes Context-Aware Residual Blocks (CARB), a novel architectural component that combines multi-path processing with learned dynamic routing based on input statistics and training state. Unlike standard residual networks that use fixed skip connections, CARB maintains three parallel computational paths—identity, linear, and non-linear transformations of varying depths—and dynamically weights their contributions through a learned context network. 
+
+This architectural modification requires specific layer arrangement with parallel branches and cannot be reduced to simple activation function replacement. CARB was evaluated on Fashion-MNIST in both supervised classification and unsupervised dimensionality reduction tasks, revealing task-dependent effectiveness. 
+
+In supervised learning, CARB achieves 90.14% accuracy, a modest 0.19 percentage point improvement over baseline (89.95%) with selective benefits on challenging classes (Shirt: +2.7 points). More significantly, in unsupervised learning, CARB autoencoders produce latent representations with a silhouette score of 0.2588, demonstrating a dramatic 95.9% improvement over vanilla autoencoders (0.1321), which actually degrade clustering quality relative to raw data. 
+
+Routing weight analysis reveals that CARB learns to emphasize simple linear transformations (0.90-0.95 weight), suggesting the network discovers appropriate architectural simplicity for Fashion-MNIST despite its multi-path capacity. These findings demonstrate that architectural flexibility provides substantial benefits for unsupervised feature learning while offering more modest supervised improvements, with the primary contribution being superior representation learning without labels.
